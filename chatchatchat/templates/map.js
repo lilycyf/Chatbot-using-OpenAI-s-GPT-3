@@ -28,8 +28,6 @@ function loadMapData() {
     return mapData;
 }
 
-
-
 function drawMap() {
     const canvas = document.getElementById("mapCanvas");
     const ctx = canvas.getContext("2d");
@@ -59,9 +57,9 @@ function drawMap() {
 }
 
 
-// window.onload = function() {
-//     drawMap();
-//   };
+window.onload = function() {
+    drawMap();
+  };
 
 
 
@@ -130,16 +128,16 @@ function findShortestPath(startNodeId, endNodeId) {
 }
 
 
-const element = document.getElementById("player");
-const path = findShortestPath(startNodeId, endNodeId);
-moveAlongPath(path, element)
+// const element = document.getElementById("player");
+// const path = findShortestPath(startNodeId, endNodeId);
+// moveAlongPath(path, element)
 
 function moveAlongPath(path, element) {
 
     const mapData = loadMapData();
     const nodes = mapData.nodes;
     const edges = mapData.edges;
-    
+
     const moveInterval = setInterval(moveAlongPathHelper, 100);
     let currentIndex = 0;
 
